@@ -1,9 +1,11 @@
-import LoginPage from "./pages/login";
+// import LoginPage from "./pages/login";
+import RegisterPage from "./pages/register";
 
 const App = () => {
   return (
     <>
-      <LoginPage/>
+      {/* <LoginPage/> */}
+      <RegisterPage/>
     </>
   )
 }
