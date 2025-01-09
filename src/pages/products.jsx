@@ -3,9 +3,8 @@ import Button from "../components/Elements/Button";
 import CardProduct from "../components/Fragments/CardProduct";
 import { useEffect, useState } from "react";
 import getProduct from "../services/product.service";
-import { getUsername } from "../services/auth.service";
+import { useLogin } from "../hooks/useLogin";
 
-const token = localStorage.getItem("token");
 
 const ProductPage = () => {
   const navigate = useNavigate();
@@ -14,7 +13,7 @@ const ProductPage = () => {
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [products, setProducts] = useState([]);
-  const [username, setUsername] = useState("");
+  const username = useLogin();
 
 
   // Menghitung total harga keranjang
@@ -23,11 +22,6 @@ const ProductPage = () => {
       cart.reduce((total, item) => total + item.price * item.qty, 0)
     );
   }, [cart]);
-
-  // Ambil username saat login
-  useEffect(() => {
-    setUsername(getUsername(token));
-  }, []);
 
   // Fetch data produk dari API
   useEffect(() => {

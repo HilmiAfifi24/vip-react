@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const getProduct = (callback, data) => {
+const getProduct = (callback) => {
   axios
-    .get("https://fakestoreapi.com/products", data)
+    .get("https://fakestoreapi.com/products")
     .then((res) => {
       console.log("API Response:", res.data); // Debugging untuk memastikan data diterima
       callback(res.data);
