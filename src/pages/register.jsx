@@ -5,7 +5,7 @@ const RegisterPage = () => {
     return (
         <>
             <div className="flex items-center justify-center h-screen">
-                <AuthLayout title="Register">
+                <AuthLayout title="Register" type="register">
                     <FormRegister/>
                 </AuthLayout>
             </div>

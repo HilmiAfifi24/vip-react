@@ -6,7 +6,7 @@ const LoginPage = () => {
     return (
         <>
             <div className="flex justify-center items-center h-screen">
-                <AuthLayout title="Login">
+                <AuthLayout title="Login" type="login">
                     <FormLogin/>
                 </AuthLayout>
             </div>
